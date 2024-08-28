@@ -1,0 +1,14 @@
+services:
+  adminer:
+    image: 'adminer:4.8.1'
+    ports:
+        - '${FORWARD_ADMINER_PORT:-7780}:8080'
+    environment:
+        ADMINER_DESIGN: '${ADMINER_DESIGN:-dracula}'
+        PHP_CLI_SERVER_WORKERS: '${ADMINER_PHP_CLI_SERVER_WORKERS:-4}'
+        ADMINER_DEFAULT_SERVER: '${DB_HOST:-pgsql}'
+    networks:
+        - sail
+  pgsql:
+    volumes:
+      - 'sail-pgsql:/var/lib/postgresql/data'

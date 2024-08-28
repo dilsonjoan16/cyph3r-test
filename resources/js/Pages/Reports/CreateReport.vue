@@ -50,26 +50,24 @@ const submit = () => {
                         </div>
                         <div class="mt-4">
                             <InputLabel for="begin_date" value="Begin Date" />
-                            <Textarea
-                                id="begin_date"
+                            <input
+                                class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                 type="date"
-                                class="mt-1 block w-full"
+                                name="begin_date"
+                                id="begin_date"
                                 v-model="form.begin_date"
-                                required
-                                autocomplete=""
-                            />
+                                required>
                             <InputError class="mt-2" :message="form.errors.begin_date" />
                         </div>
                         <div class="mt-4">
                             <InputLabel for="end_date" value="End Date" />
-                            <Textarea
-                                id="end_date"
+                            <input
+                                class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                 type="date"
-                                class="mt-1 block w-full"
+                                name="end_date"
+                                id="end_date"
                                 v-model="form.end_date"
-                                required
-                                autocomplete=""
-                            />
+                                required>
                             <InputError class="mt-2" :message="form.errors.end_date" />
                         </div>
                         <div class="flex items-center justify-end mt-4">

@@ -29,10 +29,10 @@ defineProps({
                             </tr>
                         </thead>
                         <tbody>
-                            <template v-for="item in items">
+                            <template v-for="item in items" :key="item.id">
                                 <tr>
                                     <td class="border border-slate-700">{{item.id}}</td>
-                                    <td class="border border-slate-700">{{item.report}}</td>
+                                    <td class="border border-slate-700">{{item.title}}</td>
                                     <td class="border border-slate-700">{{item.begin_date}}</td>
                                     <td class="border border-slate-700">{{item.end_date}}</td>
                                     <td class="border border-slate-700">

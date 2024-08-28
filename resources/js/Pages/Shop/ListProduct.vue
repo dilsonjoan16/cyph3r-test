@@ -30,7 +30,7 @@ defineProps({
                             </tr>
                         </thead>
                         <tbody>
-                            <template v-for="item in items">
+                            <template v-for="item in items" :key="item.id">
                                 <tr>
                                     <td class="position-relative">
                                         <img
@@ -38,7 +38,7 @@ defineProps({
                                             class="absolute -left-20 top-0 h-6 w-6 rounded-full border-2 border-white"
                                         />
                                     </td>
-                                    <td class="border border-slate-700">{{item.title}}</td>
+                                    <td class="border border-slate-700">{{item.name}}</td>
                                     <td class="border border-slate-700">{{item.price}}</td>
                                     <td class="border border-slate-700">
                                         <Link

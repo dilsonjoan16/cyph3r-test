@@ -15,9 +15,6 @@ const props = defineProps({
     end_date: {
         type: String,
     },
-    user: {
-        type: String,
-    },
     shoppings: {
         type: [Array],
     },
@@ -28,6 +25,9 @@ const props = defineProps({
         type: String,
     },
     total_tax: {
+        type: String,
+    },
+    total_profit: {
         type: String,
     },
 });
@@ -46,27 +46,25 @@ const props = defineProps({
                     <div class="mt-4">{{title}}</div>
                     <div class="mt-4">{{begin_date}}</div>
                     <div class="mt-4">{{end_date}}</div>
-                    <div class="mt-4">{{user}}</div>
                     <div class="mt-4">{{total_revenue}}</div>
                     <div class="mt-4">{{total_cost}}</div>
                     <div class="mt-4">{{total_tax}}</div>
+                    <div class="mt-4">{{total_profit}}</div>
                     <div class="position-relative">
                         <table class="border-collapse border border-slate-500 w-full">
                             <thead>
                                 <tr>
                                     <th class="border border-slate-600">date</th>
-                                    <th class="border border-slate-600">user name</th>
                                     <th class="border border-slate-600">items</th>
                                     <th class="border border-slate-600">pay amount</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <template v-for="shopping in shoppings">
+                                <template v-for="shopping in shoppings" :key="shopping.id">
                                     <tr>
-                                        <td class="border border-slate-700">{{shopping.date}}</td>
-                                        <td class="border border-slate-700">{{shopping.user}}</td>
-                                        <td class="border border-slate-700">{{shopping.items}}</td>
-                                        <td class="border border-slate-700">{{shopping.total}}</td>
+                                        <td class="border border-slate-700">{{shopping.created_at}}</td>
+                                        <td v-for="item in shopping.products" :key="item.id" class="border border-slate-700">{{item.name}}</td>
+                                        <td class="border border-slate-700">{{shopping.amount}}</td>
                                     </tr>
                                 </template>
                             </tbody>

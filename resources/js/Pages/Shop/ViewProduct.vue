@@ -48,6 +48,22 @@ const props = defineProps({
                     <div class="mt-4">{{description}}</div>
                     <div class="flex items-center justify-end mt-4">
                         <Link
+                            :href="route('products.edit', {product:id})"
+                            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                            Edit product
+                        </Link>
+                    </div>
+                    <div class="flex items-center justify-end mt-4">
+                        <Link
+                            :href="route('products.destroy', {product:id})"
+                            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                            Delete product
+                        </Link>
+                    </div>
+                    <div class="flex items-center justify-end mt-4">
+                        <Link
                             :href="route('products.buy', {product:id})"
                             class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
